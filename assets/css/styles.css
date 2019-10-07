@@ -97,3 +97,7 @@ header nav li {
   font: normal 28px "Open Sans", sans-serif;
   margin-bottom: 40px;
 }
+
+.hero a.btn {
+  padding: 20px 46px;
+}
