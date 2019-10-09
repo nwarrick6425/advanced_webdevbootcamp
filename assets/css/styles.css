@@ -240,6 +240,13 @@ header nav li {
   margin: 25px 0;
 }
 
+@media screen and (max-width: 800px) {
+  .packages .grid li {
+    flex-basis: 100%;
+    padding: 20px;
+  }
+}
+
 /* Testimonials Section */
 
 .testimonials .quote {
