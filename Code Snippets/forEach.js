@@ -1,3 +1,0 @@
-function forEach(arr, callback) {
-  
-};
