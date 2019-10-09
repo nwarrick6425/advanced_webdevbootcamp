@@ -173,6 +173,24 @@ header nav li {
   }
 }
 
+@media screen and (max-width: 800px) {
+  .hero {
+    min-height: 600px;
+  }
+
+  .hero h1 {
+    font-size: 40px;
+  }
+
+  .hero h3 {
+    font-size: 24px;
+  }
+
+  .hero a.btn {
+    padding: 15px 40px;
+  }
+}
+
 /* Destinations Sections */
 
 .destinations .grid li {
