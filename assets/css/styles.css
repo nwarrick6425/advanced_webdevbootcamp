@@ -256,6 +256,17 @@ header nav li {
   margin: 40px 0 25px;
 }
 
+@media screen and (max-width: 800px) {
+  .testimonials .quote {
+    font-size: 18px;
+    margin: 15px 0;
+  }
+
+  .testimonials .author {
+    font-size: 14px;
+  }
+}
+
 /* Contact Section */
 
 .contact form {
