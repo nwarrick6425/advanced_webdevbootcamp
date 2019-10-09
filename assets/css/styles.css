@@ -75,6 +75,12 @@ section p {
   text-align: center;
 }
 
+@media screen and (max-width: 800px) {
+  section {
+    padding: 50px 20px;
+  }
+}
+
 /* Header Styles */
 
 header {
@@ -106,6 +112,17 @@ header nav {
 
 header nav li {
   margin: 0 15px;
+}
+
+@media screen and (max-width: 800px) {
+  header {
+    padding: 20px 50px;
+    flex-direction: column;
+  }
+
+  header h2 {
+    margin-bottom: 15px;
+  }
 }
 
 /* Hero Styles */
