@@ -13,3 +13,15 @@ function findIndex(arr, callback) {
 
   return -1;
 };
+
+function countDown(time) {
+  var timeNum = time;
+  var intervalId = setInterval(() => {
+    console.log("Timer: " + timeNum);
+    timeNum--;
+    if (timeNum === 0) {
+      console.log("Ring Ring Ring!!!");
+      clearInterval(intervalId);
+    }
+  })
+};
