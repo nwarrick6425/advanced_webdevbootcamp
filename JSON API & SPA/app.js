@@ -1,12 +1,13 @@
-const express = require('express'),
-    app = express(),
-    bodyParser = require('body-parser');
+const express = require('express');
+let app = express();
 
 require('dotenv').config();
 
-const todoRoutes = require('./routes/todos');
+let bodyParser = require('body-parser');
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded(extended: true));
+app.use(bodyParser.urlencoded({ extended: true }));
+
+let todoRoutes = require('./routes/todos');
 
 app.get('/', (req, res) => {
   res.send("Hello World!");
