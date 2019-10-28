@@ -13,7 +13,13 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-  
+  db.Todo.create(req.body)
+  .then(newTodo => {
+    res.status(201).json(newTodo);
+  })
+  .catch(err => {
+    res.send(err);
+  });
 });
 
 module.exports = router;
