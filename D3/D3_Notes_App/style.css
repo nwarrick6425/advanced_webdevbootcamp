@@ -6,16 +6,30 @@ h1 {
   text-align: center;
 }
 
-#notes {
-  margin: 0 auto;
+#notes, .preview {
+  margin: 0 auto 16px;
   width: 75%;
 }
 
-.note {
-  background-color: #fdffb7;
-  border: 8px solid #d4daa7;
+.note, .preview {
   border-radius: 8px;
   padding: 10px;
+}
+
+.note {
+  border: 8px solid #d4daa7;
+  background-color: #fdffb7;
+  margin: 16px 0;
+}
+
+.preview {
+  border: 8px solid #b8ffba;
+  background-color: #4caf50;
+  box-sizing: border-box;
+}
+
+.hide {
+  display: none;
 }
 
 form {
@@ -32,16 +46,34 @@ button {
 }
 
 button {
-  background-color: #ff9494;
+  background-color: #0066ff;
   border: none;
   border-radius: 5px;
+  transition: all 0.5s;
 }
 
 button:hover {
+  background-color: #0000ff;
+  color: white;
   cursor: pointer;
-  background-color: #fe2222;
 }
 
 button:focus {
   outline: none;
+}
+
+#lucky {
+  background-color: #33ff55;
+}
+
+#lucky:hover {
+  background-color: #00ac00;
+}
+
+#remove {
+  background-color: #ff5555;
+}
+
+#remove:hover {
+  background-color: #ff0000;
 }
