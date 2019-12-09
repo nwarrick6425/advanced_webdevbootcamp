@@ -26,6 +26,49 @@ let bars = d3.select('svg')
                 .attr('width', width)
                 .attr('height', height);
 
+d3.select('input')
+    .property('value', bins.length)
+  .on('input', function() {
+    let binCount = +d3.event.target.value;
+    histogram.thresholds(xScale.ticks(binCount));
+    bins = histogram(data);
+    yScale.domain([0, d3.max(bins, d => d.length)]);
+
+    d3.select('.y-axis')
+        .call(d3.axisLeft(yScale));
+    
+    d3.select('.x-axis')
+        .call(d3.axisBottom(xScale)
+                  .ticks(binCount))
+        .selectAll('text')
+          .attr('y', -3)
+          .attr('x', 10)
+          .attr('transform', 'rotate(90)')
+          .style('text-anchor', 'start');
+
+    let rect = bars
+                  .selectAll('rect')
+                  .data(bins);
+                
+    rect
+      .exit()
+      .remove();
+
+    rect
+      .enter()
+        .append('rect')
+      .merge(rect)
+        .attr('x', d => xScale(d.x0))
+        .attr('y', d => yScale(d.length))
+        .attr('height', d => height - padding - yScale(d.length))
+        .attr('width', d => xScale(d.x1) - xScale(d.x0) - barPadding)
+        .attr('fill', '#9c27b0');
+
+    d3.select('.bin-count')
+        .text(`Number of bins: ${bins.length}`);
+
+  });
+
 bars
   .append('g')
     .attr('transform', `translate(0, ${height - padding})`)
